@@ -4,7 +4,7 @@ from design.report.bad.parameter import SimpleParameter, ItemParameter, TablePar
 class ParameterController:
     @staticmethod
     def fill_parameters(http_request, parameter_graph):
-        for parameter in parameter_graph.get_parameter_values():
+        for parameter in parameter_graph.get_parameters():
             if isinstance(parameter, SimpleParameter):
                 values = http_request.get_parameter_values(parameter.name)
                 parameter.set_value(values)
