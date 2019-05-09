@@ -1,5 +1,5 @@
 
-class NotEnoughMoneyException(object):
+class NotEnoughMoneyError(RuntimeError):
     pass
 
 
@@ -9,5 +9,5 @@ class Cashier(object):
         if wallet.get_total_money() >= payment:
             wallet.subtract_money(payment)
         else:
-            raise NotEnoughMoneyException()
+            raise NotEnoughMoneyError()
 

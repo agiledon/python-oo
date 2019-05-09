@@ -1,4 +1,5 @@
-from design.demeter.good.cashier import NotEnoughMoneyException
+class NotEnoughMoneyError(RuntimeError):
+    pass
 
 
 class Customer:
@@ -11,4 +12,4 @@ class Customer:
         if self.wallet.get_total_money() >= payment:
             self.wallet.subtract_money(payment)
         else:
-            raise NotEnoughMoneyException()
+            raise NotEnoughMoneyError()
